@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tucker Day</title>
     <link rel="icon" type="image/x-icon" href="images/websiteIcon.png">
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 900px;
+            height: 600px;
+        }
+    </style>
 </head>
-<body>
-    <!-- This page will be replaced with an image map soon so it kinda looks like crap rn -->
-    <h1>Tucker Day</h1>
-    <img src="images/selfPicture.jpg" alt="Picture of Tucker Day" width="246" height="328">
+<body style="background-color: white; text-align: center;">
+    <img src="images/homePage.png" alt="Tucker Day" class="center" usemap="#homePage">
+    <map name="homePage">
+        <area shape="rect" coords="450,235,760,300" alt="Portfolio" href="portfolio.html">
+        <area shape="rect" coords="450,300,760,375" alt="About Me" href="portfolio.html#about">
+        <area shape="rect" coords="450,375,760,450" alt="Resume" href="files/Fake Portfolio Resume.pdf">
+      </map>
     <br>
     <a href="files/Fake Portfolio Resume.pdf">Resume</a>
     <a href="portfolio.html">Portfolio</a>
