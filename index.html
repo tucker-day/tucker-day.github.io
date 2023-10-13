@@ -6,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tucker Day</title>
     <link rel="icon" type="image/x-icon" href="images/websiteIcon.png">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 900px;
-            height: 600px;
+        .hoverHighlight:hover {
+            outline: 4px solid black;
         }
     </style>
 </head>
-<body style="background-color: white; text-align: center;">
-    <img src="images/homePage.png" alt="Tucker Day" class="center" usemap="#homePage">
-    <map name="homePage">
-        <area shape="rect" coords="450,235,760,300" alt="Portfolio" href="portfolio.html">
-        <area shape="rect" coords="450,300,760,375" alt="About Me" href="portfolio.html#about">
-        <area shape="rect" coords="450,375,760,450" alt="Resume" href="files/Fake Portfolio Resume.pdf">
-      </map>
-    <br>
-    <a href="files/Fake Portfolio Resume.pdf">Resume</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="portfolio.html#about">About Me</a>
-    <br>
-    <a href="tags.html"><h3>HTML tags for the lab</h3></a>
+<body style="background-color: rgb(218, 210, 255);">
+    <table id="homePage">
+        <tr>
+            <td style="width: 55%;"><img src="images/homePage.png" alt="Tucker Day"></td>
+            <td style="width: 45%;">
+                <a href="portfolio.html"><img src="images/portfolioButton.png" alt="Portfolio" class="hoverHighlight"></a><br>
+                <a href="portfolio.html#about"><img src="images/aboutMeButton.png" alt="About Me" class="hoverHighlight"></a><br>
+                <a href="files/Fake_Portfolio_Resume.pdf"><img src="images/resumeButton.png" alt="Portfolio" class="hoverHighlight"></a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="images/contactMeButton.png" alt="Portfolio" style="width: 33%;" class="hoverHighlight roundedImage"></a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
