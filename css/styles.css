@@ -1,48 +1,59 @@
-  div {
-    padding-left: 21px;
-    padding-right: 21px;
-    padding-top: 1px;
-    padding-bottom: 21px;
+  body {
+    background-color: rgb(218, 210, 255);
   }
   
   p, h1, h2, h3, td, th {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
   }
 
-  h1, h2, h3, th {
+  h1, h2, h3 {
     text-decoration: underline;
+  }
+
+  h2, h3 {
+    text-align: center;
+  }
+
+  th {
+    font-size: large; 
   }
 
   img {
     width: 100%;
-  }
-
-  .roundedImage {
     border-radius: 16px;
   }
 
-  .largerText {
-    font-size: x-large; 
-    height: 50px;
-  }
-
-  .portfolio {
-    background-color: aliceblue;
-  }
-
-  .about {
-    background-color: rgb(255, 206, 206);
+  table {
+    width: 100%;
   }
 
   #portfolioPage {
     margin: auto;
-    max-width: 700px;
-    padding: 10px;
+    max-width: 900px;
+  }
+
+  #portfolioTable {
+    border-spacing: 20px 0px;
+  }
+
+  #portfolioTable td, #portfolioTable th {
+    padding-bottom: 20px;
+    vertical-align: top;
+    width: 50%;
+  }
+
+  #favGameTable td {
+    width: 25%;
+  }
+
+  #favGameTable th {
+    padding-top: 10px;
+    width: 20%;
   }
 
   #homePage {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 700px;
-}
+    max-width: 900px;
+  }
