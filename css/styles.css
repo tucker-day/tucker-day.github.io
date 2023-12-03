@@ -1,59 +1,128 @@
-  body {
-    background-color: rgb(218, 210, 255);
-  }
-  
-  p, h1, h2, h3, td, th {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
-  }
+/* BASE */
 
-  h1, h2, h3 {
-    text-decoration: underline;
-  }
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #191a21;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: white;
+}
 
-  h2, h3 {
-    text-align: center;
-  }
+/* HEADER */
 
-  th {
-    font-size: large; 
-  }
-
-  img {
+#header {
+    background-color: #282a36;
+    position: fixed;
     width: 100%;
-    border-radius: 16px;
-  }
+}
 
-  table {
-    width: 100%;
-  }
+#header ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
 
-  #portfolioPage {
-    margin: auto;
-    max-width: 900px;
-  }
+#header li {
+    float: left;
+}
 
-  #portfolioTable {
-    border-spacing: 20px 0px;
-  }
+#header li a {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+}
 
-  #portfolioTable td, #portfolioTable th {
-    padding-bottom: 20px;
-    vertical-align: top;
-    width: 50%;
-  }
+#header li a:hover {
+    background-color: #21222c;
+}
 
-  #favGameTable td {
-    width: 25%;
-  }
+#header #headerLogo {
+    padding: 11.5px 20px;
+}
 
-  #favGameTable th {
-    padding-top: 10px;
-    width: 20%;
-  }
+#header #headerLogo img {
+    vertical-align: middle;
+}
 
-  #homePage {
+#headerLogo:hover img {
+    filter: invert(100%);
+}
+
+#header .active {
+    background-color: #2eff00;
+    color: black;
+    font-weight: bold;
+}
+
+#header .active:hover {
+    background-color: #24c900;
+}
+
+/* PORTFOLIO */
+
+#portfolioTable {
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+#portfolioTable table{
+    border-spacing: 15px;
     width: 100%;
-    max-width: 900px;
-  }
+}
+
+#portfolioTable td, #portfolioTable th {
+    width: 33%;
+    vertical-align: top;
+}
+
+#portfolioTable th {
+    font-size: larger;
+}
+
+#portfolioTable img {
+    width: 100%;
+}
+
+#topPadding {
+    padding-top: 50px;
+}
+
+/* FOOTER */
+
+#footer {
+    background-color: #282a36;
+    padding: 40px;
+    width: 100% - 80px;
+    text-align: center;
+}
+
+#footer a {
+    color: white;
+}
+
+/* BIG LINK */
+
+.bigLink {
+    padding: 25px;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.bigLink a {
+    background-color: #2eff00;
+    color: black;
+    font-weight: bolder;
+    padding: 15px;
+    font-size: large;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.bigLink a:hover {
+    background-color: #24c900;
+}

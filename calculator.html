@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Calculator</title>
+        <link rel="icon" type="image/x-icon" href="images/logo.png">
+        <style>            
+            button, input, th {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            button {
+                width: 100%;
+                padding: 6px 10px;
+                border-radius: 5px;
+            }
+
+            td {
+                width: 25%;
+            }
+
+            table {
+                border-spacing: 5px;
+            }
+
+            input {
+                width: 350px;
+                background-color: #202124;
+                border: 1px solid #3c4043;
+                padding: 5px 15px;
+                text-align: right;
+            }
+
+            ::placeholder {
+                color: white;
+                opacity: 1;
+            }
+
+            .button1 {
+                border: solid #3c4043;
+                background-color: #3c4043;
+                color: white;
+            }
+
+            .button1:hover {
+                background-color: #424548;
+                border-color: #424548;
+            }
+
+            .button2 {
+                border: solid #5f6368;
+                background-color: #5f6368;
+                color: white;
+            }
+
+            .button2:hover {
+                background-color: #70757a;
+                border-color: #70757a;
+            }
+
+            .button3 {
+                border: solid #c38af8;
+                background-color: #b18af8;
+            }
+
+            .button3:hover {
+                background-color: #c2aefa;
+                border-color: #c2aefa;
+            }
+            
+            #main {
+                border-top: 0px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                color: white;
+                padding-top: 0px;
+                font-size: xx-large;
+            }
+
+            #last {
+                border-bottom: 0px;
+                border-top-left-radius: 10px;
+                border-top-right-radius:10px;
+                color: #969ba1;
+                padding-bottom: 4px;
+                padding-top: 10px;
+            }
+
+            #display:hover input
+            {
+                background-color: #303134;
+                border-color: #303134;
+            }
+
+            #calculator {
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <ul>
+                <li><a href="index.html" id="headerLogo"><b><img src="images/logo.png" alt="Logo"></b></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="aboutMe.html">About</a></li>
+                <!-- <li style="float: right;"><a href="#" class="active">Contact Me</a></li> -->
+            </ul>
+        </div>
+        <div id="topPadding"></div>
+        <div id="calculator">
+            <table>
+                <tr>
+                    <td colspan="4" id="display">
+                        <input type="text" name="last" value="" id="last" disabled>
+                        <br>
+                        <input type="text" name="main" placeholder="0" id="main" value="" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' (')">(</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(')')">)</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' % ')">%</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="reset()">Clear</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button1" type="button" name="clear" onclick="update('7')">7</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('8')">8</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('9')">9</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' / ')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button1" type="button" name="clear" onclick="update('4')">4</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('5')">5</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('6')">6</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' * ')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button1" type="button" name="clear" onclick="update('1')">1</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('2')">2</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('3')">3</button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' - ')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="button1" type="button" name="clear" onclick="update('0')">0</button></td>
+                    <td><button class="button1" type="button" name="clear" onclick="update('.')">.</button></td>
+                    <td><button class="button3" type="button" name="clear" onclick="calculate()"><b>=</b></button></td>
+                    <td><button class="button2" type="button" name="clear" onclick="update(' + ')">+</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            let mainText = document.getElementById('main');
+            let subText = document.getElementById('last');
+            var answerGiven = false;
+
+            function calculate() 
+            {
+                // var answer = eval(mainText.value);
+                var answer = Function("return " + mainText.value)();
+
+                if (isNaN(Number(answer)) == false)
+                {
+                    var expression = mainText.value;
+                    subText.value = expression + ' =';
+                    mainText.value = answer;
+                    answerGiven = true;
+                }
+            }
+
+            function reset()
+            {
+                if (answerGiven == true)
+                {
+                    subText.value = 'Ans = ' + mainText.value;
+                }
+
+                mainText.value = '';
+                lastInput = '';
+                answerGiven = false;
+            }
+
+            function update(input)
+            {                   
+                if (answerGiven == true)
+                {
+                    subText.value = 'Ans = ' + mainText.value; 
+
+                    if (isNaN(Number(input)) == false)
+                    {
+                        mainText.value =  '';
+                    }
+
+                    answerGiven = false;
+                }
+                
+                mainText.value += input;
+            }
+        </script>
+    </body>
+</html>
